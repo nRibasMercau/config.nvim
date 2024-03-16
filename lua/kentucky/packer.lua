@@ -88,6 +88,8 @@ return require('packer').startup(function(use)
     opts = { }
   }
 
+  use { 'nvim-tree/nvim-web-devicons' }
+
   -- THEMES 
   use { 'folke/tokyonight.nvim', lazy = false, priority = 1000, opts = {}, }
   use { "rebelot/kanagawa.nvim" }
