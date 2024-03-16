@@ -1,0 +1,5 @@
+require("kentucky.remap")
+require("kentucky.packer")
+require("kentucky.set")
+require("kentucky.lualine")
+require("kentucky.autocommand")
