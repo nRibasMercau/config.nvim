@@ -13,13 +13,6 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use ({
-  	'rafi/awesome-vim-colorschemes',
-	as = 'awesome-vim-colorschemes',
-	config = function()
-		vim.cmd('colorscheme jellybeans')
-	end
-  })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
@@ -90,7 +83,24 @@ return require('packer').startup(function(use)
 
   use { 'nvim-tree/nvim-web-devicons' }
 
+
+  -- use { 'vim-pandoc/vim-pandoc'}
+  -- use { 'vim-pandoc/vim-pandoc-syntax'}
+  -- use { 'zk-org/zk-nvim' }
+  use({
+    'MeanderingProgrammer/markdown.nvim',
+    as = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+    after = { 'nvim-treesitter' },
+    requires = { 'echasnovski/mini.nvim', opt = true }, -- if you use the mini.nvim suite
+    -- requires = { 'echasnovski/mini.icons', opt = true }, -- if you use standalone mini plugins
+    -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+    config = function()
+        require('render-markdown').setup({})
+    end,
+  })
+
   -- THEMES 
+  use ({ 'rafi/awesome-vim-colorschemes', as = 'awesome-vim-colorschemes', })
   use { 'folke/tokyonight.nvim', lazy = false, priority = 1000, opts = {}, }
   use { "rebelot/kanagawa.nvim" }
   use { "catppuccin/nvim", as = 'catppuccin' }

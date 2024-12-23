@@ -12,7 +12,7 @@ end)
 -- here you can setup the language servers
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'lua_ls', 'jedi_language_server', 'rust_analyzer', 'sqlls', 'tsserver', 'eslint'},
+	ensure_installed = {'lua_ls', 'jedi_language_server', 'rust_analyzer', 'sqlls', 'eslint'},
 	handlers = {
 		lsp_zero.default_setup,
   }
